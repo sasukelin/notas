@@ -1,0 +1,31 @@
+ class Principal {
+
+
+
+    public static void main(String[] args) {
+        // Crear una fecha de nacimiento para el estudiante
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaNacimiento = null;
+        try {
+            fechaNacimiento = sdf.parse("15/03/2000"); // Cambia esta fecha por la del estudiante
+        } catch (ParseException e) {
+        }
+
+        // Crear un objeto Estudiante
+        Estudiante estudiante = new Estudiante("Juan", fechaNacimiento);
+
+        // Establecer las notas de las materias
+        estudiante.setNotaMateria1(4.2);
+        estudiante.setNotaMateria2(2.5);
+        estudiante.setNotaMateria3(9.2);
+
+        // Obtener la edad y el promedio de notas
+        int edad = estudiante.getEdad();
+        double promedio = estudiante.getPromedio();
+
+        // Imprimir la información del estudiante
+        System.out.println("Nombre del estudiante: " + estudiante.getNombre());
+        System.out.println("Edad del estudiante: " + edad + " años");
+        System.out.println("Promedio de notas del estudiante: " + promedio);
+    }
+}
